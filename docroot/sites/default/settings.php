@@ -288,7 +288,7 @@ $config_directories['vcs'] = '../configvcs';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'zbXborhemxzVdNgkj3pzMB8-tij-azyBOljhYr-P0LMqcwHIAa7EKOmOWGKmLKAG9XLS5A4w6Q';
 
 /**
  * Deployment identifier.
@@ -724,3 +724,16 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/newbluedrupal8/newbluedrupal8-settings.inc');
 }
+$databases['default']['default'] = array (
+  'database' => 'd8',
+  'username' => 'root',
+  'password' => 'password',
+  'prefix' => '',
+  'host' => '127.0.0.1',
+  'port' => '',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+$settings['install_profile'] = 'standard';
+$config_directories['sync'] = 'sites/default/files/config_fPYIHt9hHEBQRv-yoZqKtfrxWHVd6jIFP20ciq7giyAmbxzr3gtU6D6TRPrnQxAb_ER9ojrqtw/sync';
+$config_directories['configvcs'] = '../vcs/config_fPYIHt9hHEBQRv-yoZqKtfrxWHVd6jIFP20ciq7giyAmbxzr3gtU6D6TRPrnQxAb_ER9ojrqtw/configvcs';

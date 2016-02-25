@@ -44,4 +44,5 @@ RUN curl -sS https://getcomposer.org/installer | php
 
 # Create a softlink
 RUN cd /usr/bin ; ln -s /composer.phar composer
+RUN cd /opt ; composer require drush/drush
 # End of Installation of LAMP packages

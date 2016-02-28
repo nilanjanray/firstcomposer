@@ -42,7 +42,27 @@ RUN yum  install mod_php70u.x86_64 php70u-common.x86_64 php70u-cli.x86_64 php70u
 # Composer Installation
 RUN curl -sS https://getcomposer.org/installer | php
 
-# Create a softlink
+# Create a softlink for Composer & Drush
 RUN cd /usr/bin ; ln -s /composer.phar composer
+
+# Hope composer can execution within this period no time-out again
+RUN composer --global config process-timeout 2000
+
+# Drush configuration and installation.
 RUN cd /opt ; composer require drush/drush
+RUN cd /usr/bin ; ln -s /opt/vendor/drush/drush/drush drush
+# Mysql Server Installation
+RUN yum install mysql56u-server.x86_64 -y
 # End of Installation of LAMP packages
+
+# git installation & configuration
+RUN yum install git -y
+# We may add the steps to configure .ssh and global config
+# git installation & configuration
+
+# Checkout latest version of Drupal
+#ADD composer.json /
+RUN mkdir -p /var/www/html/drupal
+RUN composer create-project drupal/drupal /var/www/html/drupal
+#composer update
+# @TODO: We may need to softlink to the docroot of apache, lets see first.

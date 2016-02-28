@@ -48,9 +48,6 @@ RUN cd /usr/bin ; ln -s /composer.phar composer
 # Hope composer can execution within this period no time-out again
 RUN composer --global config process-timeout 2000
 
-# Drush configuration and installation.
-RUN cd /opt ; composer require drush/drush
-RUN cd /usr/bin ; ln -s /opt/vendor/drush/drush/drush drush
 # Mysql Server Installation
 RUN yum install mysql56u-server.x86_64 -y
 # End of Installation of LAMP packages
@@ -61,8 +58,10 @@ RUN yum install git -y
 # git installation & configuration
 
 # Checkout latest version of Drupal
-#ADD composer.json /
-RUN mkdir -p /var/www/html/drupal
-RUN composer create-project drupal/drupal /var/www/html/drupal
+ADD composer.json /
+RUN mkdir -p /opt/drupal
+RUN mv /composer.json /opt/drupal
+RUN cd /opt/drupal ; composer install
+
 #composer update
 # @TODO: We may need to softlink to the docroot of apache, lets see first.

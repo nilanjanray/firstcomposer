@@ -4,7 +4,7 @@
     "authors": [
         {
             "name": "nilanjanray",
-            "email": "nilanjan.ray@ericsson.com"
+            "email": "roy.nilanjan@gmail.com"
         }
     ],
     "minimum-stability": "dev",
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "HelloWorld\\": "src/"
+            "HelloWorld\\X\\Y": "src/"
         }
     }
 }

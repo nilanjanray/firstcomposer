@@ -7,14 +7,10 @@
             "email": "roy.nilanjan@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.3.0",
-        "drupal/core": "8.4.0-alpha1"
+     "require": {
+        "php": ">=5.6.0",
+       "drupal/core": "~8.4"
     },
-    "autoload": {
-        "psr-4": {
-            "HelloWorld\\X\\Y\\": "src/"
-        }
-    }
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

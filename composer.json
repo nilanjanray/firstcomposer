@@ -8,13 +8,9 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.3.0",
-        "drupal/core": "8.4.0-alpha1"
-    },
-    "autoload": {
-        "psr-4": {
-            "HelloWorld\\X\\Y\\": "src/"
-        }
+        "drupal/core": "8.3.x-dev"
     }
 }

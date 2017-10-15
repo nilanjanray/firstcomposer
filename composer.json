@@ -13,13 +13,11 @@
         "drupal/core": "~8.4"
     },
     "require-dev": {
-      "drush/drush": "~9.0"
+      "drush/drush": "~8.1"
     },
     "extra": {
         "installer-paths": {
             "{$name}": ["type:drupal-core"]
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
